@@ -79,15 +79,20 @@
 		};
 		plugins = {
 			lualine.enable = true;
+			barbar = {
+				enable = true;
+				keymaps = {
+					close.key = "<C-c>";
+					next.key = "<C-s>";
+					previous.key = "<C-a";
+				};
+			};
 			treesitter.enable = true;
 			neo-tree.enable = true;
 			web-devicons.enable = true;
+			comment.enable = true;
+			typst-preview.enable = true;
 		};
-		extraPlugins = with pkgs.vimPlugins; [
-			typst-vim
-			barbar-nvim
-			vim-commentary
-		];
 		globals = {
 			mapleader = " ";
 			maplocalleader = " ";
@@ -126,18 +131,8 @@
 			}
 			{
 				mode = "n";
-				key = "<C-a>";
-				action = ":BufferPrevious <CR>";
-			}
-			{
-				mode = "n";
-				key = "<C-s>";
-				action = ":BufferNext <CR>";
-			}
-			{
-				mode = "n";
-				key = "<C-c>";
-				action = ":BufferClose <CR>";
+				key = "<C-t>";
+				action = ":TypstPreview <CR>";
 			}
 		];
 	};

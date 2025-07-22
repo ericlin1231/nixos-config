@@ -44,7 +44,11 @@ in {
 		};
 	};
 
-	fonts.packages = fontPkgs;
+	fonts = {
+		enableDefaultPackages = true;
+		fontconfig.enable = true;
+		packages = fontPkgs;
+	};
 	environment.systemPackages = systemPkgs;
 	programs.nix-ld.enable = true;
 	virtualisation.docker.enable = true;

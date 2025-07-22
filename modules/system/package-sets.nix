@@ -8,6 +8,7 @@ rec {
 	fontPkgs = with pkgs; [
 		noto-fonts
 		noto-fonts-cjk-sans
+		noto-fonts-cjk-serif
 		nerd-fonts.jetbrains-mono
 	];
 
@@ -33,11 +34,20 @@ rec {
 		hyprsunset pavucontrol
 	];
 
+	securityPkgs = with pkgs; [
+		kdePackages.kwallet
+		kdePackages.kwallet-pam
+	];
+
 	officePkgs = with pkgs; [
 		brave discord-ptb obsidian
 		libreoffice-qt hunspell
 		anki-bin anki-sync-server
+		kdePackages.okular
 	];
 
-	systemPkgs = toolPkgs ++ windowsPkgs ++ officePkgs;
+	systemPkgs = toolPkgs
+			   ++ officePkgs
+			   ++ windowsPkgs
+			   ++ securityPkgs;
 }

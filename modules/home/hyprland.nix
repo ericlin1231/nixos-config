@@ -4,7 +4,6 @@
 	wayland.windowManager.hyprland = {
 		enable = true;
 		extraConfig = ''
-			exec-once = dbus-update-activation-environment --systemd DISPLAY XAUTHORITY WAYLAND_DISPLAY XDG_SESSION_DESKTOP=Hyprland XDG_CURRENT_DESKTOP=Hyprland XDG_SESSION_TYPE=wayland
 			exec-once = fcitx5
 			exec-once = blueman-applet
 			exec-once = nm-applet --indicator
