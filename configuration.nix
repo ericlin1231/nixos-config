@@ -1,4 +1,4 @@
-{ config, pkgs, inputs,  ... }:
+{ config, pkgs, ... }:
 
 let
 	pkgSets = import ./modules/system/package-sets.nix { inherit pkgs; };
