@@ -32,6 +32,8 @@ rec {
 		dunst libnotify
 		networkmanagerapplet
 		hyprsunset pavucontrol
+		sddm-astronaut
+		kdePackages.qtmultimedia
 	];
 
 	securityPkgs = with pkgs; [
