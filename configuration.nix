@@ -20,6 +20,10 @@ in {
 			useOSProber = true;
 			device = "nodev";
 		};
+		grub2-theme = {
+			enable = true;
+			theme = "stylish";
+		};
 	};
 
 	networking = {
@@ -42,6 +46,14 @@ in {
 			powerOnBoot = true;
 			settings.General.Experimental = true;
 		};
+	};
+
+	systemd.services.bluetooth = {
+		enable = true;
+		description = "Bluetooth service";
+		wantedBy = [ "basic.target" ];
+		after = [ "sysinit.target" ];
+		before = [ "network.target" "multi-user.target" "graphical.target" ];
 	};
 
 	fonts = {

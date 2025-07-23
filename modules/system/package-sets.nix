@@ -7,15 +7,18 @@ rec {
 
 	fontPkgs = with pkgs; [
 		noto-fonts
+		noto-fonts-emoji
 		noto-fonts-cjk-sans
 		noto-fonts-cjk-serif
+		source-han-sans
+		nerd-fonts.roboto-mono
 		nerd-fonts.jetbrains-mono
 	];
 
 	toolPkgs = with pkgs; [
 		gh gnupg tree
 		curl cloc typst
-		pinentry
+		pinentry poppler_utils
 
 		gdb gnumake
 		gcc clang
@@ -36,11 +39,6 @@ rec {
 		kdePackages.qtmultimedia
 	];
 
-	securityPkgs = with pkgs; [
-		kdePackages.kwallet
-		kdePackages.kwallet-pam
-	];
-
 	officePkgs = with pkgs; [
 		brave discord-ptb obsidian
 		libreoffice-qt hunspell
@@ -50,6 +48,5 @@ rec {
 
 	systemPkgs = toolPkgs
 			   ++ officePkgs
-			   ++ windowsPkgs
-			   ++ securityPkgs;
+			   ++ windowsPkgs;
 }

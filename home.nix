@@ -84,14 +84,13 @@
 				keymaps = {
 					close.key = "<C-c>";
 					next.key = "<C-s>";
-					previous.key = "<C-a";
+					previous.key = "<C-a>";
 				};
 			};
 			treesitter.enable = true;
 			neo-tree.enable = true;
 			web-devicons.enable = true;
 			comment.enable = true;
-			typst-preview.enable = true;
 		};
 		globals = {
 			mapleader = " ";

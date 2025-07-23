@@ -1,6 +1,7 @@
 { pkgs,  ... }:
 
 {
+	programs.hyprland.enable = true;
 	services.displayManager.sddm = {
 		enable = true;
 		wayland.enable = true;
@@ -8,13 +9,6 @@
 		extraPackages = [ pkgs.sddm-astronaut ];
 		theme = "sddm-astronaut-theme";
 		settings.Theme.Current = "sddm-astronaut-theme";
-	};
-
-	programs.hyprland.enable = true;
-
-	environment.sessionVariables = {
-		WLR_NO_HARDWARE_CURSORS = "1";
-		NIXOS_OZONE_WL = "1";
 	};
 
 	xdg.portal = {
