@@ -16,16 +16,24 @@ rec {
 	];
 
 	toolPkgs = with pkgs; [
+		# General Tools
 		gh gnupg tree
-		curl cloc typst
-		pinentry poppler_utils
+		curl cloc
+		pinentry
 
+		# System Programming
 		gdb gnumake
 		gcc clang
 		cppcheck valgrind
 		qemu
+
+		# Full-Stack
 		deno
 
+		# Formatter
+		prettierd rustfmt
+
+		# VLSI Tools
 		verilator surfer
 	];
 
@@ -43,7 +51,7 @@ rec {
 		brave discord-ptb obsidian
 		libreoffice-qt hunspell
 		anki-bin anki-sync-server
-		kdePackages.okular
+		kdePackages.okular typst
 	];
 
 	systemPkgs = toolPkgs
