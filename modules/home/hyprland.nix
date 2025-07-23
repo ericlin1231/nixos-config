@@ -116,7 +116,7 @@
 
 			bind = $mainMod, Q, exec, $terminal
 			bind = $mainMod, S, exec, rofi -show drun -show-icons
-			bind = $mainMod, B, exec, brave
+			bind = $mainMod, B, exec, brave --password-store=basic
 			bind = $mainMod, C, killactive,
 			bind = $mainMod, M, exit,
 			bind = $mainMod, E, exec, $fileManager
