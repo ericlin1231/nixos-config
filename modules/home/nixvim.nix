@@ -1,92 +1,94 @@
 { nixvim, ... }:
 
 {
-	programs.nixvim = {
-		enable = true;
-		defaultEditor = true;
-		colorschemes = {
-		  tokyonight = {
-		    enable = true;
-		    settings.style = "night";
-		  };
-		};
-		plugins = {
-			lualine.enable = true;
-			neo-tree.enable = true;
-			web-devicons.enable = true;
-			barbar = {
-				enable = true;
-				keymaps = {
-					close.key = "<C-c>";
-					next.key = "<C-s>";
-					previous.key = "<C-a>";
-				};
-			};
-			treesitter.enable = true;
-			comment.enable = true;
-			conform-nvim = {
-				enable = true;
-				settings = {
-					formatters_by_ft = {
-						typescript = [ "prettierd" ];
-						typescriptreact = [ "prettierd" ];
-						json = [ "prettierd" ];
-						rust = [ "rustfmt" ];
-					};
-					format_on_save = {
-						timeout_ms = 500;
-						lsp_format = "fallback";
-					};
-				};
-			};
-		};
-		globals = {
-			mapleader = " ";
-			maplocalleader = " ";
-		};
-		opts = {
-			mouse = "a";
-			showmode = false;
-			ignorecase = true;
-			smartcase = true;
-			hlsearch = true;
-			incsearch = true;
-			swapfile = false;
-			scrolloff = 5;
-			textwidth = 80;
+  programs.nixvim = {
+    enable = true;
+    defaultEditor = true;
+    colorschemes = {
+      tokyonight = {
+        enable = true;
+        settings.style = "night";
+      };
+    };
+    plugins = {
+      lualine.enable = true;
+      neo-tree.enable = true;
+      web-devicons.enable = true;
+      barbar = {
+        enable = true;
+        keymaps = {
+          close.key = "<C-c>";
+          next.key = "<C-s>";
+          previous.key = "<C-a>";
+        };
+      };
+      treesitter.enable = true;
+      comment.enable = true;
+      conform-nvim = {
+        enable = true;
+        settings = {
+          formatters_by_ft = {
+            typescript = [ "prettierd" ];
+            typescriptreact = [ "prettierd" ];
+            python = [
+              "isort"
+              "black"
+            ];
+            json = [ "prettierd" ];
+            rust = [ "rustfmt" ];
+            nix = [ "nixfmt" ];
+          };
+          format_on_save = {
+            timeout_ms = 500;
+            lsp_format = "fallback";
+          };
+        };
+      };
+    };
+    globals = {
+      mapleader = " ";
+      maplocalleader = " ";
+    };
+    opts = {
+      mouse = "a";
+      showmode = false;
+      ignorecase = true;
+      smartcase = true;
+      hlsearch = true;
+      incsearch = true;
+      swapfile = false;
+      scrolloff = 5;
+      textwidth = 80;
 
-			tabstop = 4;
-			shiftwidth = 4;
-			softtabstop = 4;
-			expandtab = false;
-		};
-		autoCmd = [
-			{
-				event = "BufWritePre";
-				callback = {
-					__raw = ''
-						function(args) require('conform').format({ bufnr = args.buf }) end
-					'';
-				};
-			}
-		];
-		keymaps = [
-			{
-				mode = "n";
-				key = "<Space>u";
-				action = "<C-r>";
-			}
-			{
-				mode = "n";
-				key = "<Leader>e";
-				action = ":Neotree <CR>";
-			}
-			{
-				mode = "n";
-				key = "<Leader>r";
-				action = ":Neotree toggle last <CR>";
-			}
-		];
-	};
+      tabstop = 4;
+      shiftwidth = 4;
+      softtabstop = 4;
+      expandtab = false;
+    };
+    autoCmd = [
+      {
+        event = "BufWritePre";
+        callback = {
+          __raw = "	function(args) require('conform').format({ bufnr = args.buf }) end\n";
+        };
+      }
+    ];
+    keymaps = [
+      {
+        mode = "n";
+        key = "<Space>u";
+        action = "<C-r>";
+      }
+      {
+        mode = "n";
+        key = "<Leader>e";
+        action = ":Neotree <CR>";
+      }
+      {
+        mode = "n";
+        key = "<Leader>r";
+        action = ":Neotree toggle last <CR>";
+      }
+    ];
+  };
 }
-
