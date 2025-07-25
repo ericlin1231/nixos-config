@@ -36,9 +36,9 @@
     # Formatter
     prettierd
     rustfmt
-    nixfmt-rfc-style
     black
     isort
+		verible
 
     # VLSI Tools
     verilator

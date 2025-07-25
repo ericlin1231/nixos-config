@@ -36,7 +36,7 @@
             ];
             json = [ "prettierd" ];
             rust = [ "rustfmt" ];
-            nix = [ "nixfmt" ];
+						systemverilog = [ "verible" ];
           };
           format_on_save = {
             timeout_ms = 500;
@@ -72,6 +72,11 @@
           __raw = "	function(args) require('conform').format({ bufnr = args.buf }) end\n";
         };
       }
+	  {
+		event = "FileType";
+		pattern = "nix";
+		command = "setlocal tabstop=2 shiftwidth=2 softtabstop=2";
+	  }
     ];
     keymaps = [
       {
