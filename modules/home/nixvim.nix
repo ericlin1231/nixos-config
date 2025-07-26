@@ -36,7 +36,7 @@
             ];
             json = [ "prettierd" ];
             rust = [ "rustfmt" ];
-						systemverilog = [ "verible" ];
+            systemverilog = [ "verible" ];
           };
           format_on_save = {
             timeout_ms = 500;
@@ -63,20 +63,20 @@
       tabstop = 4;
       shiftwidth = 4;
       softtabstop = 4;
-      expandtab = false;
+      expandtab = true;
     };
     autoCmd = [
       {
         event = "BufWritePre";
         callback = {
-          __raw = "	function(args) require('conform').format({ bufnr = args.buf }) end\n";
+          __raw = "function(args) require('conform').format({ bufnr = args.buf }) end\n";
         };
       }
-	  {
-		event = "FileType";
-		pattern = "nix";
-		command = "setlocal tabstop=2 shiftwidth=2 softtabstop=2";
-	  }
+      {
+        event = "FileType";
+        pattern = "nix";
+        command = "setlocal tabstop=2 shiftwidth=2 softtabstop=2";
+      }
     ];
     keymaps = [
       {

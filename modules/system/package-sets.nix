@@ -28,6 +28,7 @@
     cppcheck
     valgrind
     qemu
+    zig
     rustup
     deno
     uv
@@ -38,7 +39,7 @@
     rustfmt
     black
     isort
-		verible
+    verible
 
     # VLSI Tools
     verilator
