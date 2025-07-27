@@ -19,6 +19,7 @@
     curl
     cloc
     pinentry
+    openssl
 
     # Programming
     gdb

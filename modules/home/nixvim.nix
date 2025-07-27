@@ -12,7 +12,17 @@
     };
     plugins = {
       lualine.enable = true;
-      neo-tree.enable = true;
+      neo-tree = {
+        enable = true;
+        filesystem = {
+          filteredItems = {
+            alwaysShow = [
+              ".gitignore"
+              ".env"
+            ];
+          };
+        };
+      };
       web-devicons.enable = true;
       barbar = {
         enable = true;
