@@ -16,7 +16,6 @@
 
       monitor=,preferred,auto,auto
       $terminal = alacritty
-      $fileManager = dolphin
 
       general {
         gaps_in = 5
@@ -119,7 +118,6 @@
       bind = $mainMod, B, exec, brave --password-store=basic
       bind = $mainMod, C, killactive,
       bind = $mainMod, M, exit,
-      bind = $mainMod, E, exec, $fileManager
       bind = $mainMod, V, togglefloating,
       bind = $mainMod, R, exec, $menu
       bind = $mainMod, P, pseudo, # dwindle

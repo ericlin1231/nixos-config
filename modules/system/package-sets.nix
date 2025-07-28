@@ -54,6 +54,7 @@
     waybar
     eww
     swww
+    nnn
     alacritty
     rofi-wayland
     dunst

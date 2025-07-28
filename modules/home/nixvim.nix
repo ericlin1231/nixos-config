@@ -54,6 +54,17 @@
           };
         };
       };
+      telescope = {
+        enable = true;
+        extensions = {
+          fzf-native.enable = true;
+          live-grep-args.enable = true;
+        };
+        keymaps = {
+          "<Leader>ff" = "find_files";
+          "<Leader>fg" = "live_grep";
+        };
+      };
     };
     clipboard = {
       register = "unnamedplus";

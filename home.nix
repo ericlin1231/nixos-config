@@ -16,6 +16,7 @@
     ./modules/home/nixvim.nix
     ./modules/home/alacritty.nix
     ./modules/home/starship.nix
+    ./modules/home/nnn.nix
     ./modules/home/shellAliases.nix
   ];
 }
