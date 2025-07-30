@@ -32,7 +32,29 @@
           previous.key = "<C-a>";
         };
       };
-      treesitter.enable = true;
+      treesitter = {
+        enable = true;
+        settings = {
+          ensure_installed = [
+            "c"
+            "cpp"
+            "zig"
+            "rust"
+            "python"
+            "verilog"
+            "nix"
+            "bash"
+            "typst"
+            "markdown_inline"
+            "json"
+            "yaml"
+            "typescript"
+            "css"
+            "scss"
+          ];
+          highlight.enable = true;
+        };
+      };
       comment.enable = true;
       conform-nvim = {
         enable = true;
@@ -99,7 +121,10 @@
       }
       {
         event = "FileType";
-        pattern = "nix";
+        pattern = [
+          "nix"
+          "typescriptreact"
+        ];
         command = "setlocal tabstop=2 shiftwidth=2 softtabstop=2";
       }
     ];

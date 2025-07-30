@@ -8,8 +8,8 @@
       exec-once = blueman-applet
       exec-once = nm-applet --indicator
       exec-once = hyprsunset --temperature 3000
-      exec-once = swww init
-      exec-once = swww img ~/wallpaper/mountain.png
+      exec-once = swww-daemon
+      exec-once = swww img ~/workspace/nixos-config/wallpaper/mountain.jpg
       exec-once = waybar
       exec-once = dunst
       exec-once = pinentry
@@ -116,12 +116,13 @@
       bind = $mainMod, Q, exec, $terminal
       bind = $mainMod, S, exec, rofi -show drun -show-icons
       bind = $mainMod, B, exec, brave --password-store=basic
-      bind = $mainMod, C, killactive,
-      bind = $mainMod, M, exit,
-      bind = $mainMod, V, togglefloating,
+      bind = $mainMod, E, exec, bilibili
+      bind = $mainMod, C, killactive
+      bind = $mainMod, M, exit
+      bind = $mainMod, V, togglefloating
       bind = $mainMod, R, exec, $menu
-      bind = $mainMod, P, pseudo, # dwindle
-      bind = $mainMod, J, togglesplit, # dwindle
+      bind = $mainMod, P, pseudo
+      bind = $mainMod, J, togglesplit
 
       bind = $mainMod, left, movefocus, l
       bind = $mainMod, right, movefocus, r

@@ -54,7 +54,6 @@
     waybar
     eww
     swww
-    nnn
     alacritty
     rofi-wayland
     dunst
@@ -68,6 +67,7 @@
 
   officePkgs = with pkgs; [
     brave
+    bilibili
     discord-ptb
     obsidian
     libreoffice-qt
