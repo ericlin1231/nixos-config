@@ -76,6 +76,10 @@
     anki-sync-server
     kdePackages.okular
     typst
+    usbimager
+    usbutils
+    gnome-disk-utility
+    webex
   ];
 
   systemPkgs = toolPkgs ++ officePkgs ++ windowsPkgs;
