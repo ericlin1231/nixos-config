@@ -23,6 +23,18 @@
         modules = [
           ./configuration.nix
           grub2-themes.nixosModules.default
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit nixvim; };
+            home-manager.users.eric = {
+              imports = [
+                ./home.nix
+                nixvim.homeManagerModules.nixvim
+              ];
+            };
+          }
         ];
       };
       homeConfigurations.eric = home-manager.lib.homeManagerConfiguration {

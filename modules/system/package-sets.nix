@@ -13,6 +13,7 @@
 
   toolPkgs = with pkgs; [
     # General Tools
+    home-manager
     gh
     gnupg
     tree
@@ -20,6 +21,7 @@
     cloc
     pinentry
     openssl
+    awscli
 
     # Programming
     gdb
@@ -79,7 +81,6 @@
     usbimager
     usbutils
     gnome-disk-utility
-    webex
   ];
 
   systemPkgs = toolPkgs ++ officePkgs ++ windowsPkgs;
