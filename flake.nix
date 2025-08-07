@@ -18,16 +18,37 @@
         config.allowUnfree = true;
       };
     in {
-      nixosConfigurations.eric = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          ./configuration.nix
+          ./desktop-configuration.nix
           grub2-themes.nixosModules.default
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = { inherit nixvim; };
+            home-manager.backupFileExtension = "backup";
+            home-manager.users.eric = {
+              imports = [
+                ./home.nix
+                nixvim.homeManagerModules.nixvim
+              ];
+            };
+          }
+        ];
+      };
+      nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./laptop-configuration.nix
+          grub2-themes.nixosModules.default
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit nixvim; };
+            home-manager.backupFileExtension = "backup";
             home-manager.users.eric = {
               imports = [
                 ./home.nix

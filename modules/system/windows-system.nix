@@ -1,11 +1,12 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   programs.hyprland.enable = true;
+  services.desktopManager.plasma6.enable = true;
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-    package = pkgs.kdePackages.sddm;
+    package = lib.mkForce pkgs.kdePackages.sddm;
     extraPackages = [ pkgs.sddm-astronaut ];
     theme = "sddm-astronaut-theme";
     settings.Theme.Current = "sddm-astronaut-theme";
