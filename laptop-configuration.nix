@@ -66,8 +66,7 @@ in
   environment.systemPackages = systemPkgs;
   programs.nix-ld.enable = true;
   virtualisation.docker.enable = true;
-  services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "amdgpu" ];
+  services.xserver.enable = false;
 
   time.timeZone = "Asia/Taipei";
 

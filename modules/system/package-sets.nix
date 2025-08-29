@@ -21,6 +21,7 @@
     pinentry
     openssl
     awscli
+    amdgpu_top
 
     # Programming
     gdb
@@ -68,6 +69,7 @@
 
   officePkgs = with pkgs; [
     brave
+    gamescope
     bilibili
     discord-ptb
     obsidian
@@ -77,9 +79,6 @@
     anki-sync-server
     kdePackages.okular
     typst
-    usbimager
-    usbutils
-    gnome-disk-utility
   ];
 
   systemPkgs = toolPkgs ++ officePkgs ++ windowsPkgs;
