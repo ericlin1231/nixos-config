@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   pkgSets = import ./modules/system/package-sets.nix { inherit pkgs; };
@@ -14,18 +14,31 @@ in
     ./modules/system/steam.nix
   ];
 
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    grub = {
-      enable = true;
-      efiSupport = true;
-      useOSProber = true;
-      device = "nodev";
+  fileSystems."/" = {
+    device = lib.mkForce "/dev/disk/by-uuid/4ecb5d4a-dfc0-441a-9aa9-95ee20641c42";
+    fsType = "ext4";
+  };
+
+  fileSystems."/boot" = {
+    device = lib.mkForce "/dev/disk/by-uuid/19DA-7C4A";
+    fsType = "vfat";
+    options = [ "fmask=0077" "dmask=0077" ];
+  };
+
+  boot = {
+    loader = {
+      efi.canTouchEfiVariables = true;
+      grub = {
+        enable = true;
+        efiSupport = true;
+        useOSProber = true;
+        device = "nodev";
+        gfxmodeEfi = lib.mkForce "3200x2000";
+        configurationLimit = 5;
+        copyKernels = false;
+      };
     };
-    grub2-theme = {
-      enable = true;
-      theme = "stylish";
-    };
+    kernelPackages = pkgs.linuxPackages;
   };
 
   networking = {

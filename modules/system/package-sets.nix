@@ -24,6 +24,7 @@
     amdgpu_top
 
     # Programming
+    ghostty
     gdb
     gnumake
     gcc
