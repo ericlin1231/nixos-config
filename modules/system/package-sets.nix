@@ -29,6 +29,8 @@
     gnumake
     gcc
     clang
+    lld
+    libllvm
     cppcheck
     valgrind
     qemu

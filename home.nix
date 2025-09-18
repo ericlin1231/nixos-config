@@ -15,6 +15,7 @@
     ./modules/home/direnv.nix
     ./modules/home/nixvim.nix
     ./modules/home/alacritty.nix
+    ./modules/home/ghostty.nix
     ./modules/home/starship.nix
     ./modules/home/shellAliases.nix
   ];
