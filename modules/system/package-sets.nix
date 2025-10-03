@@ -22,6 +22,9 @@
     openssl
     awscli
     amdgpu_top
+    wget
+    gdown
+    gzip
 
     # Programming
     ghostty
@@ -31,6 +34,8 @@
     clang
     lld
     libllvm
+    libevent
+    json_c
     cppcheck
     valgrind
     qemu
@@ -39,6 +44,7 @@
     deno
     uv
     python313
+    coreboot-toolchain.riscv
 
     # Formatter
     prettierd
@@ -82,6 +88,7 @@
     anki-sync-server
     kdePackages.okular
     typst
+    rustdesk
   ];
 
   systemPkgs = toolPkgs ++ officePkgs ++ windowsPkgs;
