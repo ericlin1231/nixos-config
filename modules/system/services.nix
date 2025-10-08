@@ -9,4 +9,8 @@
     enable = true;
     enableSSHSupport = true;
   };
+
+  services.udev.extraRules = ''
+    ATTR{idVendor}=="0403", ATTR{idProduct}=="6015", MODE="0666"
+  '';
 }

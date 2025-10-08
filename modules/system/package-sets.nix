@@ -25,6 +25,7 @@
     wget
     gdown
     gzip
+    usbutils
 
     # Programming
     ghostty
@@ -45,6 +46,7 @@
     uv
     python313
     coreboot-toolchain.riscv
+    trellis
 
     # Formatter
     prettierd
@@ -89,6 +91,7 @@
     kdePackages.okular
     typst
     rustdesk
+    screen
   ];
 
   systemPkgs = toolPkgs ++ officePkgs ++ windowsPkgs;

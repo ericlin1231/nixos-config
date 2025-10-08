@@ -96,6 +96,8 @@ in
     };
   };
 
+  users.groups.plugdev = {};
+
   users.users.eric = {
     isNormalUser = true;
     description = "eric";
