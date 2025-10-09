@@ -11,7 +11,6 @@
   ];
 
   toolPkgs = with pkgs; [
-    # General Tools
     home-manager
     gh
     gnupg
@@ -26,54 +25,61 @@
     gdown
     gzip
     usbutils
-
-    # Programming
     ghostty
     gdb
     gnumake
+  ];
+
+  programPkgs = with pkgs; [
     gcc
     clang
     lld
     libllvm
-    libevent
-    json_c
-    cppcheck
-    valgrind
-    qemu
     zig
     rustup
-    deno
     uv
     python313
-    coreboot-toolchain.riscv
-    trellis
+    deno
+    nodejs_20
+  ];
 
-    # Formatter
+  debugPkgs = with pkgs; [
+    gdb
+    cppcheck
+    valgrind
+  ];
+
+  libPkgs = with pkgs; [
+    libllvm
+    zlib
+    libevent
+    json_c
+  ];
+
+  vmPkgs = with pkgs; [
+    qemu
+  ];
+
+  formatterPkgs = with pkgs; [
     prettierd
     rustfmt
     black
     isort
     verible
+  ];
 
-    # VLSI Tools
+  vlsiPkgs = with pkgs; [
     verilator
     surfer
+    trellis
+  ];
 
-    # Firmware
+  driverPkgs = with pkgs; [
     vulkan-loader
   ];
 
   windowsPkgs = with pkgs; [
-    waybar
-    eww
-    swww
-    alacritty
-    rofi-wayland
-    dunst
-    libnotify
     networkmanagerapplet
-    hyprsunset
-    pavucontrol
     sddm-astronaut
     kdePackages.qtmultimedia
   ];
@@ -94,5 +100,6 @@
     screen
   ];
 
-  systemPkgs = toolPkgs ++ officePkgs ++ windowsPkgs;
+  systemPkgs = toolPkgs ++ programPkgs ++ debugPkgs ++ vmPkgs ++ libPkgs ++
+  vlsiPkgs ++ driverPkgs ++ formatterPkgs ++ officePkgs ++ windowsPkgs;
 }

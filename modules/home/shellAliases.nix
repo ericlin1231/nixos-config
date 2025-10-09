@@ -14,5 +14,6 @@
       -I __pycache__ -I tsconfig* -I eslint* -I vite* \
       --gitignore --dirsfirst
     '';
+    venv = "source .venv/bin/activate";
   };
 }
