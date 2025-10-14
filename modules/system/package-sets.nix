@@ -25,6 +25,7 @@
     gdown
     gzip
     usbutils
+    picocom
     ghostty
     gdb
     gnumake
