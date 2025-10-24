@@ -99,6 +99,8 @@
     typst
     rustdesk
     screen
+    cacert
+    parted
   ];
 
   systemPkgs = toolPkgs ++ programPkgs ++ debugPkgs ++ vmPkgs ++ libPkgs ++
