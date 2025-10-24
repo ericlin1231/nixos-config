@@ -1,5 +1,8 @@
 { pkgs }: rec {
-  fcitxPkgs = with pkgs; [ fcitx5-gtk fcitx5-chewing ];
+  fcitxPkgs = with pkgs; [
+    fcitx5-gtk
+    fcitx5-mcbopomofo
+  ];
 
   fontPkgs = with pkgs; [
     noto-fonts
@@ -96,6 +99,7 @@
     anki-bin
     anki-sync-server
     kdePackages.okular
+    zathura
     typst
     rustdesk
     screen
