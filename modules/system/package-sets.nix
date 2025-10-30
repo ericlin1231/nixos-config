@@ -1,5 +1,9 @@
 { pkgs }: rec {
-  fcitxPkgs = with pkgs; [ fcitx5-gtk fcitx5-chewing ];
+  fcitxPkgs = with pkgs; [ 
+    fcitx5-gtk
+    fcitx5-chewing 
+    fcitx5-mcbopomofo
+  ];
 
   fontPkgs = with pkgs; [
     noto-fonts
@@ -59,6 +63,9 @@
 
   vmPkgs = with pkgs; [
     qemu
+    winetricks
+    wineWowPackages.stable
+    wineWowPackages.waylandFull
   ];
 
   formatterPkgs = with pkgs; [
